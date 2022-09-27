@@ -1,7 +1,20 @@
-import './styles/main.scss'; // Don't delete :)
-import smile from './scripts/smile.js'; // Feel free to delete :)
-
-// All of your javascript should go here :)
+// Importing files
+import { updater } from "./scripts/smile.js"
 
 
-smile() // Feel free to delete :)
+const btn = document.querySelector(".btn")
+const info = document.querySelector(".info")
+
+btn.addEventListener("click" , () => {
+     
+    let num = 100
+    const interval = setInterval(() => {
+           num--
+           info.style.display = "block"
+
+           if(num < 0) {
+            clearInterval(interval)
+            info.style.display = "none"
+           }
+    }, 50)
+})
